@@ -1,2 +1,2 @@
 # stm32-asm-samples
-Assembly samples for stm32
+ARM Assembly samples for stm32
