@@ -38,7 +38,7 @@ loop:
     b     loop
 
 delay_hs:                 @ delay half second
-    mov32 r2, #3600000
+    mov32 r2, #5200000
 dhs_l0:
     sub   r2, r2, #1
     and   r3, r2, 0xFFFFFFFF
