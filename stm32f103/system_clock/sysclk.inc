@@ -34,16 +34,16 @@ ssci_l0:
     orr   r0, r0, #0x01000000  @ Enable PLL
     str   r0, [r1]
 
-    @ configure flash latency
-    mov32 r1, 0x40022000       @ FLASH_ACR address
-    mov32 r0, 0x00000001       @ set flash wait state
-    str   r0, [r1]
-
     @ while (!PLL_ready);
 ssci_l1:
     ldr   r0, [r1]
     tst   r0, #0x02000000
     bne   ssci_l1
+    
+    @ configure flash latency
+    mov32 r1, 0x40022000       @ FLASH_ACR address
+    mov32 r0, 0x00000001       @ set flash wait state
+    str   r0, [r1]
 
     @ PLL as clock source
     mov32 r1, 0x40021004       @ RCC_CFGR address
