@@ -39,7 +39,11 @@ ssci_l1:
     ldr   r0, [r1]
     tst   r0, #0x02000000
     bne   ssci_l1
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> f351f9d6437c272fae911f33e4aa849c33ce4325
     @ configure flash latency
     mov32 r1, 0x40022000       @ FLASH_ACR address
     mov32 r0, 0x00000001       @ set flash wait state

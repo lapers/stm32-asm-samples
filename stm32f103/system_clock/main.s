@@ -16,7 +16,11 @@ b   start
 
 start:
     mov32 r1, 0x40021018  @ RCC_APB2ENR address
+<<<<<<< HEAD
     mov32 r0, 0x10        @ enable GPIOs & AFIO
+=======
+    mov32 r0, 0x10        @ enable GPIOC
+>>>>>>> f351f9d6437c272fae911f33e4aa849c33ce4325
     str   r0, [r1]
 
     mov32 r1, 0x40011004  @ GPIOC_CRH address
@@ -38,11 +42,20 @@ loop:
     b     loop
 
 delay_hs:                 @ delay half second
+<<<<<<< HEAD
     mov32 r2, #3600000
 ds_l0:
     sub   r2, r2, #1
     and   r3, r2, 0xFFFFFFFF
     cmp   r3, #0
     bne   ds_l0
+=======
+    mov32 r2, #5200000
+dhs_l0:
+    sub   r2, r2, #1
+    and   r3, r2, 0xFFFFFFFF
+    cmp   r3, #0
+    bne   dhs_l0
+>>>>>>> f351f9d6437c272fae911f33e4aa849c33ce4325
 
     bx    lr
